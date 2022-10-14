@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>算数训练20以内加法</title>
+    <style>
+        body{
+            font-size: 30px;
+        }
+        input{
+            font-size: 1em;
+            width: 3em;
+            margin: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>算数训练</h1>
+    <div id="question">
+        <input  id="opNum1">
+        <span>+</span>
+        <input  id="opNum2">
+    </div>
+    <div id="answer">
+        A. <input type="button" id="answer1">
+        B. <input type="button" id="answer2">
+        C. <input type="button" id="answer3">
+        D. <input type="button" id="answer4">
+    </div>
+    <script>
+        var opNum1=parseInt(10*Math.random());
+        var opNum2=parseInt(10*Math.random());
+        var opNum1Dom=document.querySelector("input#opNum1");
+        var opNum2Dom=document.querySelector("input#opNum2");
+        opNum1Dom.value=opNum1;
+        opNum2Dom.value=opNum2;
+        var opNumDoms=document.querySelectorAll("div#answer input");
+        for(var i=0;i<4;i++){
+            var answer=parseInt(20*Math.random());
+            opNumDoms[i].value=answer;
+            opNumDoms[i].onclick=function(){
+                var answer=parseInt(this.value);
+                var sel=opNum1+opNum2;
+                if(sel===answer){
+                    alert("ok");
+                }else{
+                    alert("wrong");
+                }
+            };
+        }
+        var ram=parseInt(3*Math.random())
+        if (ram == 0){
+			opNumDoms[0].value = opNum1 + opNum2;
+		}else if(ram == 1){
+			opNumDoms[1].value = opNum1 + opNum2;
+		}else if(ram == 2){
+			opNumDoms[2].value = opNum1 + opNum2;
+		}else if(ram == 3){
+			opNumDoms[3].value = opNum1 + opNum2;
+		}
+    </script>
+
+    
+</body>
+</html>
