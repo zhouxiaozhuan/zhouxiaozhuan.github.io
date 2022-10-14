@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人简介</title>
+    <style>
+        body{
+            font-size: 50px;
+            background-color: hsl(309, 58%, 77%);
+
+        }
+    </style>
+</head>
+<body>
+    <p id="emm"></p>
+    <script>
+        var a=document.getElementById("emm");
+        var abc="神秘的20203033,  她不想留下照片";
+        a.textContent="";
+        var i=0;
+        function f(){
+           if(i<abc.length){
+           a.textContent += abc[i];
+           i++;
+           }}
+        setInterval(f,100);
+        </script>
+</body>
+</html>

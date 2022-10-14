@@ -17,26 +17,48 @@
         }
         #name{
             position:absolute;
-            font-size:12em;
-            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-		    left:0.5em;
-		    top:0.3em;
+            font-size:10em;
+            font-family: Arial, Helvetica, sans-serif;
+		    left:1em;
+		    top:0.5em;
             margin:0;
-		    opacity:0.11;
+		    opacity:0.1;
 		    color:#0048ff;
         }
         #but{
             font-size:2em;
 		    text-align:center;
-		    position:relative;
-            left: 0.1em;
-            top: 1.5em;
+		    position:absolute;
+            left: 1.2em;
+            top: 1.8em;
 		    }
         img{
             width:2em;
             height:2em;
             border:5px solid rgb(15, 201, 204);
             }
+        ol{
+            position:absolute;
+	        left:1em;
+            bottom:1em;
+	        border:2px solid hsl(205, 55%, 6%) ; 
+	        background-color:hsl(204, 19%, 95%);
+	        font-size:1em;   
+            }
+        ol li{
+            margin:5px; 
+            color:rgb(14, 15, 8);
+            background-color:hsl(72, 73%, 74%);
+            width:7em;
+            }
+        li{
+            cursor:pointer;
+            }
+        li:hover{
+            background-color:rgb(0, 145, 255);
+            color:white;
+             }
+           
 
     </style>
 </head>
@@ -46,7 +68,30 @@
     </div>
     <div id="but">
         <a href="https://github.com/zhouxiaozhuan/zhouxiaozhuan.github.io" target="_BLANK">
-            <img src="images/abc.jpg" alt="进入我的首页！" >
+            <img src="images/abc.jpg"  >
     </div>
+    <ol>
+        <li>
+            <a href="me.html">
+                我的个人简介
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/zhouxiaozhuan/zhouxiaozhuan.github.io" target="_BLANK">
+                我的代码库
+            </a>
+        </li>
+        <li>
+            <a href="images/qr.jpg">
+                我的页面二维码
+            </a>
+        </li>
+        <li>
+            <a href="test2.html" target="_BLANK">
+                我的作业
+            </a>
+            
+        </li>
+     </ol>
 </body>
 </html>
