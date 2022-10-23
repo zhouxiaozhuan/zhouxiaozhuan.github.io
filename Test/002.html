@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        function randNums(){
+            var s="";
+            for(var i=0;i<2;i++){
+                s+=randNum();
+            }
+            return s;
+            function randNum(){
+            return Math.floor(Math.random()*10);
+            }
+        }
+        var randArr = [];
+        setInterval(
+            function(){
+                for(var i=0; i<4; i++){
+                    randArr[i]=randNums();
+                }
+                varnDom=document.querySelectorAll('pspan');
+                for(vari=0;i<4;i++){
+                nDom[i].textContent=randArr[i];
+                }
+            },1000 )
+                
+            
+        
+        
+           
+           
+           
+        //-->
+    </script>
+</head>
+<body>
+    <p>
+        <span> 00</span>
+        <span> 00</span>
+
+    </p>
+
+</body>
+</html>
