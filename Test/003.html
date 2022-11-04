@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <title>Document</title>
+   <style>
+    div{
+        width:6%;
+        height:16%;
+        margin:1em;
+        border: 10px solid;
+        display: block;
+        position:absolute;
+        top:10%;
+        left:0%;
+        cursor:pointer;
+        background:url("../images/1.png");
+
+    }
+    div p{
+        position:relative;
+        left:10%;
+        top:10%;
+        text-align: center;
+        display: inline;
+        font-size: 0.4em;
+        opacity: 2;
+    }
+    body{
+        cursor:pointer;
+        border:1pxsolid;
+        margin:0;
+        overflow:hidden;
+}
+   </style>
+   <script type="text/javascript">
+    function Bby(name,age,male){
+        this.name=name;
+        this.age=age;
+        this.male=male;
+        this.divDom=null;
+
+        this.move=function(){
+            var randx=window.innerWidth*0.6*Math.random();
+            var randy=window.innerHeight*0.6*Math.random();
+            this.divDom.style.left=randx+'px';
+            this.divDom.style.top=randy+'px';
+        };
+
+        this.addToDom=function(){
+            var div=document.createElement("div");
+            var p=document.createElement('p');
+            //p.textContent给p设置内容
+            p.textContent=this.name+"/"+this.age;
+            var txtColor=this.male? "pink" : "blue";
+            //div.style.borderColor给div的外观边框设置颜色
+            div.style.borderColor=txtColor;
+            div.appendChild(p);
+            //设定dom元素的属性model，指向代表本内存对象本身
+            //在本方法addToDom函数第一次运行时，可以用this获取该值。
+            div.model=this;
+            div.onmouseover=function(){
+                this.model.move();
+            };
+            this.divDom=div;
+            document.body.appendChild(div); 
+
+        };
+    }//end of function Bby
+    //把自动产生的对象放入数组bby
+    var bby=[];
+    const bbyNum=50;
+    var name,age,male;
+    for(var i=0; i<bbyNum; i++){
+        var male=Math.random() > 0.5 ? true: false;
+        if(male){
+            name="粑粑云"+i;
+            age=100+Math.floor(Math.random()+10);
+        }else{
+            name="粑粑钟"+i;
+            age=1+Math.floor(Math.random()+10);
+        }
+        bby[i]=new Bby(name,age,male);
+    }
+    
+   </script>
+</head>
+<body>
+    <h1>随机生成粑粑框,粉框代表粑粑云，蓝框代表粑粑钟</h1>
+    <script type="text/javascript">
+        
+        for(var i=0;i<bbyNum;i++){
+
+            bby[i].addToDom();
+        }
+    </script>
+ 
+    
+</body>
+</html>
