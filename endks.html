@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>
+   动态DOM编程起点和基础
+</title>
+  <style type="text/css">
+    body{
+        margin: 0;
+        background-color: rgba(250, 217, 239, 0.5);
+        overflow: hidden;
+        /* cursor鼠标手 */
+        cursor: pointer;
+    }
+    div{
+      border: 1px solid rgb(223, 255, 128);
+      width:100px;
+      height:100px;
+      background-color:rgba(157, 218, 240, 0.3);
+      display:inline-block;
+      margin: 2%;
+      padding: 2%;
+      text-align: center;
+      color: rgb(173, 86, 248);
+      font-family: 宋体;
+      border-radius: 50%;
+      position: absolute;
+      transition: all 2s;
+
+    }
+    div.db{
+      border-radius: 0% ; 
+      background-color:rgba(222, 251, 143, 0.3);
+      color: rgb(236, 147, 74);
+
+    }
+  </style>
+
+ </head>
+ <body>
+  <script type="text/javascript">
+    var bodyWidth = window.innerWidth;
+    var bodyHeight = window.innerHeight;
+    document.body.style.width = bodyWidth + 'px';
+    document.body.style.height = bodyHeight + 'px';
+    var r = bodyWidth > bodyHeight ? bodyHeight / 10: bodyWidth / 10 ; 
+    for(var i = 0; i < 100 ; i++){
+      const s = ['20java2班20203033周小专' , '绝代有佳人，幽居在空谷。自云良家子，零落依草木。'] ; 
+        var divDom = document.createElement('div') ;
+        divDom.textContent = s[0];
+        function divposition(div){
+            var randx = Math.floor(Math.random()*bodyWidth);
+            var randy = Math.floor(Math.random()*bodyHeight);
+            div.style.left = randx + 'px';
+            div.style.top = randy + 'px';
+        };
+        if(i%2 == 0){
+          divDom.className = 'db' ;
+          divDom.textContent = s[1];
+        }
+        divposition(divDom);
+        divDom.onmouseover = function(){
+          divposition(this);
+        }
+        document.body.appendChild(divDom) ;
+    }
+    document.body.ondblclick = function(){ 
+                
+            }; 
+  
+   
+    
+  
+  </script>
+ </body>
+</html>
