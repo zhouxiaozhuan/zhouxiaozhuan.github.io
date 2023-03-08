@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>me</title>
+    <style>
+        body{
+            font-size:2.5em;
+            font-family: 楷体;
+            background-color: hsl(0, 0%, 100%);
+            color: #ff2727;
+
+        }
+        p{
+            text-align: center;
+            width: 50%;
+
+        }
+        .ts{
+            color: #b1aef3;
+            font-size: 3em;
+            position: absolute;
+            bottom: 15%;
+            border:2px solid rgba(244, 244, 229, 0.7);
+		    border-radius:20px;
+            background: linear-gradient(
+			90deg,
+			#a98d67,
+			#395f84,
+			#bf9830,
+			#986a17,
+			#256a87,
+			#1f6b75,
+			#a98d67
+		);
+		opacity:0.65;
+		background-size:300%;
+		animation: mySong 6s linear infinite;
+        animation: mySong 6s linear infinite;
+	}
+	@keyframes mySong {
+		from {
+			background-position: 0%;
+		}
+
+		to {
+			background-position: 300%;
+		}
+	}
+	#song:hover{
+		animation-play-state:paused;
+		cursor:pointer;
+	}
+        img{
+            width: 50%;
+            height:60% ;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <p id="emm"></p>
+    <script>
+        var a=document.getElementById("emm");
+        var abc="首先，一年一度的女神节来到了,     祝群里的各位女神们节日快乐!!!";
+        a.textContent="";
+        var i=0;
+        function f(){
+           if(i<abc.length){
+           a.textContent += abc[i];
+           i++;
+           }
+        }
+        setInterval(f,120);
+    </script>
+    <p class="ts">点爱心</p>
+    <a href="mother2.html">
+        <img src="./images/3.png" alt="">
+    </a>
+    
+</body>
+</html>
